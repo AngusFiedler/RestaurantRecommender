@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class NewItemWidget extends StatefulWidget {
   NewItemWidget({Key key}) : super(key: key);
@@ -7,6 +8,13 @@ class NewItemWidget extends StatefulWidget {
 }
 
 class _ItemState extends State<NewItemWidget> {
+
+  void addData(String meal, String restName) async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    List<String> mealList = prefs.getStringList("mealListKey");
+    mealList.add(meal);
+    prefs.setStringList("mealListKey", mealList);
+  }
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
