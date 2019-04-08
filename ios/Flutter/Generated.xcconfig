@@ -1,7 +1,7 @@
 // This is a generated file; do not edit or check into version control.
 FLUTTER_ROOT=/Users/angusfiedler/Development/flutter
-FLUTTER_APPLICATION_PATH=/Users/angusfiedler/OneDrive/MISC/2270 Final Project/food_recommendation
-FLUTTER_TARGET=/Users/angusfiedler/OneDrive/MISC/2270 Final Project/food_recommendation/lib/main.dart
+FLUTTER_APPLICATION_PATH=/Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender
+FLUTTER_TARGET=/Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/lib/main.dart
 FLUTTER_BUILD_DIR=build
 SYMROOT=${SOURCE_ROOT}/../build/ios
 FLUTTER_FRAMEWORK_DIR=/Users/angusfiedler/Development/flutter/bin/cache/artifacts/engine/ios
