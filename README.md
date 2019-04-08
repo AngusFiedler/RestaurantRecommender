@@ -1,6 +1,6 @@
 # food_recommendation
 
-A new Flutter project.
+A Flutter project that recommends nearby restaurant's to the user based on previous visits and the users location.
 
 ## Getting Started
 
