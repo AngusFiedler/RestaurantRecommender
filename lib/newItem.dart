@@ -9,12 +9,14 @@ class NewItemWidget extends StatefulWidget {
 
 class _ItemState extends State<NewItemWidget> {
 
-  void addData(String meal, String restName) async{
+  void addData(String restaurantName, String category) async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    List<String> mealList = prefs.getStringList("mealListKey");
-    mealList.add(meal);
-    prefs.setStringList("mealListKey", mealList);
+    List<String> restaurantNameList = prefs.getStringList("RestaurantNameKey");
+    //List<String> restaurantNameList = prefs.getStringList("RestaurantNameKey");
+    restaurantNameList.add(restaurantName);
+    prefs.setStringList("RestaurantNameKey", restaurantNameList);
   }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -42,17 +44,16 @@ class _ItemState extends State<NewItemWidget> {
           padding: EdgeInsets.all(20),
           child: Column(
             children: <Widget>[
-              Text("Enter the meal that you ate"),
-              TextField(),
-              Padding(
-                padding: EdgeInsets.all(10),
-              ),
               Text("What Restaurant did you go to?"),
               TextField(),
               Padding(
                 padding: EdgeInsets.all(10),
               ),
-              //Text("Select the cat of food"),
+              Text("What category was this restaurant?"),
+              TextField(),
+              Padding(
+                padding: EdgeInsets.all(10),
+              ),
               FlatButton(
                 child: Text(
                   "Save Data",
