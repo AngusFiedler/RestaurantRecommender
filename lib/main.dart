@@ -26,6 +26,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String lat = "Latitude: NULL", longitude = "Longitude: NULL";
   Location _location = new Location();
 
 
@@ -34,6 +35,11 @@ class _MyHomePageState extends State<MyHomePage> {
     userLocation = await _location.getLocation();
     print(userLocation.latitude);
     print(userLocation.longitude);
+    //lat = userLocation.latitude.toString();
+    setState(() {
+      lat = "Latitude: " + userLocation.latitude.toString();
+      longitude = "Longitude: " + userLocation.longitude.toString();
+    });
   }
 
   @override
@@ -62,6 +68,8 @@ class _MyHomePageState extends State<MyHomePage> {
             )
             ),
             FlatButton(child: Text("Refresh Data", style: TextStyle(color: Colors.white),),onPressed: () {refreshData();},color: Colors.red,),
+            Text(lat),
+            Text(longitude),
           ],
         ),
       ),
