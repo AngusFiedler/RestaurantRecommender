@@ -26,17 +26,17 @@ class Graph<T>
     visited.clear();
     var queue = new Queue<T>();
     visited.add(v);
-    queue.enqueue(v);
+    queue.addLast(v);
     while (!queue.isNotEmpty)
     {
-      var p = queue.dequeue();
+      var p = queue.removeFirst();
       print('Visited vertex: $p');
       for (T n in AdjacenecyList[p])
       {
         if (!visited.contains(n))
         {
           visited.add(n);
-          queue.enqueue(n);
+          queue.addLast(n);
         }
       }
     }
