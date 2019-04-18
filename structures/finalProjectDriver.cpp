@@ -13,26 +13,36 @@ int main(int argc, char *argv[]){
 
 	Graph g0;
 
-	ifstream inStream;
-	inStream.open(argv[1]);
+	ifstream american;
+	american.open(argv[1]);
 
 	stringstream ss;
 	string line;
 	string name;
 	string category;
+
 	string location;
+	string street;
+	string city;
+	string state;
+	string country;
+
 	string rating;
 	string distance;
 
-	if(inStream.is_open()){
-		while(getline(inStream, line)){
+	if(american.is_open()){
+		while(getline(american, line)){
 			ss << line;
 			getline(ss, name, ',');
-			getline(ss, category, ',');
-			getline(ss, location, ',');
 			getline(ss, rating, ',');
+			getline(ss, street, ',');
+			getline(ss, city, ',');
+			getline(ss, state, ',');
+			getline(ss, country, ',');
+			location = street + city + state + country;
+			category = "American";
 			getline(ss, distance);
-
+		
 			//cout << name << category << location << rating << distance << endl;
 
 			g0.addVertex(name, category, location, stof(rating), stof(distance));
