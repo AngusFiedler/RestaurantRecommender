@@ -37,13 +37,14 @@ int main(int argc, char *argv[]){
 		if(inStream.is_open()){
 			while(getline(inStream, line)){
 				ss << line;
-				getline(ss, name, ',');
-				getline(ss, rating, ',');
-				getline(ss, street, ',');
-				getline(ss, city, ',');
-				getline(ss, state, ',');
-				getline(ss, country, ',');
-				location = street + city + state + country;
+				getline(ss, name, '"');
+				getline(ss, rating, '"');
+				getline(ss, location, '"');
+				// getline(ss, street, ',');
+				// getline(ss, city, ',');
+				// getline(ss, state, ',');
+				// getline(ss, country, ',');
+				//location = street + city + state + country;
 				category = argv[i];
 				category.erase (category.begin(), category.begin()+2);
 				category.erase(category.end()-4, category.end());
