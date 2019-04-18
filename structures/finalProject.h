@@ -35,6 +35,7 @@ class Graph
     ~Graph();
     void addVertex(std::string restaurantName, std::string category, std::string location, float rating, float distance);
     void addEdge(std::string restaurant1, std::string restaurant2);
+    vertex *findVertex(std::string name);
     void displayEdges();
     //void printDFT();
     //void printBFT();
@@ -53,8 +54,6 @@ class Graph
     bool inRecommendations(vertex *v, vector<vertex*> recommendations);
     void setWeights(vector<vertex*> recommendations);
     void sortRecommendations();
-    vertex *findVertex(std::string name);
-
     float calcWeight(vertex *v);
     //void BFT_traversal(vertex *v);
     //void DFT_traversal(vertex *v);

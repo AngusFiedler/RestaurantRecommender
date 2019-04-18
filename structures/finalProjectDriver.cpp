@@ -44,16 +44,41 @@ int main(int argc, char *argv[]){
 		//done reading in restaurants. build edges based on category
 		g0.buildEdges();
 
-		//g0.displayEdges();
+		//done building reference graph and edges. Start UI
 
-		//recommend a restaurant, sorted by restaurant rating
-		g0.saveRestaurant("Cosmo's Pizza");
-		g0.saveRestaurant("Oak");
-		g0.saveRestaurant("The Sink");
-		g0.saveRestaurant("The Boulder Cork");
-		g0.saveRestaurant("Efrain's II Mexican Restaurant");
+		string choice = "0";
+		while(stoi(choice) != 3){
+			cout << "======Main Menu======" << endl;
+			cout << "1. Save a new restaurant" << endl;
+			cout << "2. Get recommendations" << endl;
+			cout << "3. Quit" << endl;
 
-		g0.recommend();
+			getline(cin, choice);
+
+			switch(stoi(choice)){
+				case 1:{
+					string name;
+					cout << endl << "Enter the name of the restaurant: ";
+					getline(cin, name);
+					if(!g0.findVertex(name)){
+						cout << endl << "Sorry, restaurant is not in directory yet. Please try another restaurant" << endl << endl;
+					}else{
+						g0.saveRestaurant(name);
+						cout << endl << "Restaurant saved!!" << endl << endl;
+					}
+					break;
+				}
+				case 2:{
+					cout <<endl;
+					g0.recommend();
+					break;
+				}
+				case 3:{
+					cout << "Goodbye!" << endl;
+					break;
+				}
+			}
+		}
 
 
 		
