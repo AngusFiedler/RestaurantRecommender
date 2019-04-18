@@ -290,3 +290,9 @@ void Graph::displayVertex(vertex *v){
 	cout << "	Count: " << v->count << endl;
 	cout << "	Weight: " << v->weight << endl;
 }
+
+void Graph::displayAllVertices(){
+	for(int i = 0; i < vertices.size(); i++){
+		displayVertex(&vertices[i]);
+	}
+}

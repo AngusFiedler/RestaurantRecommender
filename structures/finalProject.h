@@ -44,6 +44,7 @@ class Graph
     void displayVertex(vertex *v);
     void buildEdges();
     void saveRestaurant(string restaurantName);
+    void displayAllVertices();
 
   private:
     std::vector<vertex> vertices; //stores vertices

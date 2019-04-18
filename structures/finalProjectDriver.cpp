@@ -13,96 +13,105 @@ int main(int argc, char *argv[]){
 
 	Graph g0;
 
-	ifstream american;
-	american.open(argv[1]);
+	ifstream inStream;
+	//cout << argc << endl;
 
-	stringstream ss;
-	string line;
-	string name;
-	string category;
+	for(int i = 1; i < argc; i++){
+		//cout << argv[i] << endl;
+		inStream.open(argv[i]);
 
-	string location;
-	string street;
-	string city;
-	string state;
-	string country;
+		stringstream ss;
+		string line;
+		string name;
+		string category;
 
-	string rating;
-	string distance;
+		string location;
+		string street;
+		string city;
+		string state;
+		string country;
 
-	if(american.is_open()){
-		while(getline(american, line)){
-			ss << line;
-			getline(ss, name, ',');
-			getline(ss, rating, ',');
-			getline(ss, street, ',');
-			getline(ss, city, ',');
-			getline(ss, state, ',');
-			getline(ss, country, ',');
-			location = street + city + state + country;
-			category = "American";
-			getline(ss, distance);
-		
-			//cout << name << category << location << rating << distance << endl;
+		string rating;
+		string distance;
 
-			g0.addVertex(name, category, location, stof(rating), stof(distance));
+		if(inStream.is_open()){
+			while(getline(inStream, line)){
+				ss << line;
+				getline(ss, name, ',');
+				getline(ss, rating, ',');
+				getline(ss, street, ',');
+				getline(ss, city, ',');
+				getline(ss, state, ',');
+				getline(ss, country, ',');
+				location = street + city + state + country;
+				category = argv[i];
+				category.erase (category.begin(), category.begin()+2);
+				category.erase(category.end()-4, category.end());
+				getline(ss, distance);
+			
+				//cout << name << category << location << rating << distance << endl;
+				//cout << i << endl;
 
-			ss.clear();
+				g0.addVertex(name, category, location, stof(rating), stof(distance));
+
+				ss.clear();
+			}
+			inStream.close();	
+
+
+		}else{
+			cout << "Error opening data file" << endl;
 		}
+	}
 
 
-		//done reading in restaurants. build edges based on category
-		g0.buildEdges();
 
-		//done building reference graph and edges. Start UI
 
-		string choice = "0";
-		while(stoi(choice) != 3){
-			cout << "======Main Menu======" << endl;
-			cout << "1. Save a new restaurant" << endl;
-			cout << "2. Get recommendations" << endl;
-			cout << "3. Quit" << endl;
+	//done reading in restaurants. build edges based on category
+	g0.buildEdges();
 
-			getline(cin, choice);
+	//done building reference graph and edges. Start UI
 
-			switch(stoi(choice)){
-				case 1:{
-					string name;
-					cout << endl << "Enter the name of the restaurant: ";
-					getline(cin, name);
-					if(!g0.findVertex(name)){
-						cout << endl << "Sorry, restaurant is not in directory yet. Please try another restaurant" << endl << endl;
-					}else{
-						g0.saveRestaurant(name);
-						cout << endl << "Restaurant saved!!" << endl << endl;
-					}
-					break;
+	string choice = "0";
+	while(stoi(choice) != 4){
+		cout << "======Main Menu======" << endl;
+		cout << "1. Save a new restaurant" << endl;
+		cout << "2. Get recommendations" << endl;
+		cout << "3. Show all Restaurants" << endl;
+		cout << "4. Quit" << endl;
+
+		getline(cin, choice);
+
+		switch(stoi(choice)){
+			case 1:{
+				string name;
+				cout << endl << "Enter the name of the restaurant: ";
+				getline(cin, name);
+				if(!g0.findVertex(name)){
+					cout << endl << "Sorry, restaurant is not in directory yet. Please try another restaurant" << endl << endl;
+				}else{
+					g0.saveRestaurant(name);
+					cout << endl << "Restaurant saved!!" << endl << endl;
 				}
-				case 2:{
-					cout <<endl;
-					g0.recommend();
-					cout << endl;
-					break;
-				}
-				case 3:{
-					cout << "Goodbye!" << endl;
-					break;
-				}
+				break;
+			}
+			case 2:{
+				cout <<endl;
+				g0.recommend();
+				cout << endl;
+				break;
+			}
+			case 3:{
+				g0.displayAllVertices();
+				break;
+			}
+			case 4:{
+				break;
 			}
 		}
-
-
-		
-
-
-
-
-
-
-
-	}else{
-		cout << "Error opening data file" << endl;
 	}
+
+
 
 
 	return 0;
