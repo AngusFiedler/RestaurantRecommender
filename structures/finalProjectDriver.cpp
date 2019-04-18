@@ -71,6 +71,7 @@ int main(int argc, char *argv[]){
 				case 2:{
 					cout <<endl;
 					g0.recommend();
+					cout << endl;
 					break;
 				}
 				case 3:{
