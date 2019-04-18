@@ -5,13 +5,17 @@ using namespace std;
 
 #include "finalProject.h"
 
-bool operator<(const Edge& e1, const Edge& e2){return e1.v->rating > e2.v->rating;}
+bool operator<(const vertex& v1, const vertex& v2){return v1.weight > v2.weight;}
 
 Graph::Graph(){
 
 }
 
 Graph::~Graph(){
+
+}
+
+float calcWeight(vertex *v){
 
 }
 
@@ -23,7 +27,9 @@ void Graph::addVertex(string restaurantName, string category, string location, f
 	v1.distance = distance;
 	v1.rating = rating;
 	v1.saved = false;
+	v1.count = 1;
 	vertices.push_back(v1);
+	
 }
 
 void Graph::addEdge(string restaurant1, string restaurant2){
@@ -45,13 +51,9 @@ void Graph::addEdge(string restaurant1, string restaurant2){
 		}
 	}
 
-	sortEdges();
+
 }
 
-void Graph::sortEdges(){
-	for(int i = 0; i < vertices.size(); i++)
-		sort(vertices[i].Edges.begin(), vertices[i].Edges.end());
-}
 
 bool Graph::inEdges(vertex *v1, vertex *v2){
 	for(int i = 0; i < v1->Edges.size(); i++){
@@ -82,7 +84,6 @@ void Graph::buildEdges(){
 
 	}
 
-	sortEdges();
 }
 
 
@@ -100,31 +101,31 @@ void Graph::displayEdges(){
 	}
 }
 
-void Graph::setAllVerticesUnvisited(){
-	for(int i = 0; i < vertices.size(); i++){
-		vertices[i].visited = false;
-	}
-}
+// void Graph::setAllVerticesUnvisited(){
+// 	for(int i = 0; i < vertices.size(); i++){
+// 		vertices[i].visited = false;
+// 	}
+// }
 
-void Graph::printDFT(){
-	setAllVerticesUnvisited();
-	for(int i = 0; i < vertices.size(); i++){
-		if(!vertices[i].visited)
-			DFT_traversal(&vertices[i]);
-	}
-}
+// void Graph::printDFT(){
+// 	setAllVerticesUnvisited();
+// 	for(int i = 0; i < vertices.size(); i++){
+// 		if(!vertices[i].visited)
+// 			DFT_traversal(&vertices[i]);
+// 	}
+// }
 
-void Graph::printBFT(){
-	setAllVerticesUnvisited();
-	for(int i = 0; i < vertices.size(); i++){
-		if(!vertices[i].visited)
-			BFT_traversal(&vertices[i]);
-	}
-}
+// void Graph::printBFT(){
+// 	setAllVerticesUnvisited();
+// 	for(int i = 0; i < vertices.size(); i++){
+// 		if(!vertices[i].visited)
+// 			BFT_traversal(&vertices[i]);
+// 	}
+// }
 
 
 vertex* Graph::findVertex(string name){
-	vertex *found;
+	vertex *found = nullptr;
 	for(int i = 0; i < vertices.size(); i++){
 		if(vertices[i].name == name){
 			found = &vertices[i];
@@ -135,62 +136,147 @@ vertex* Graph::findVertex(string name){
 	return found;
 }
 
-void DFT_recursive(vertex *v){
-	v->visited = true;
-	for(int i = 0; i < v->Edges.size(); i++){
-		if(!v->Edges[i].v->visited){
-			cout << v->Edges[i].v->name << endl;
-			DFT_recursive(v->Edges[i].v);
-		}
+// void DFT_recursive(vertex *v){
+// 	v->visited = true;
+// 	for(int i = 0; i < v->Edges.size(); i++){
+// 		if(!v->Edges[i].v->visited){
+// 			cout << v->Edges[i].v->name << endl;
+// 			DFT_recursive(v->Edges[i].v);
+// 		}
+// 	}
+// }
+
+// void Graph::BFT_traversal(vertex *v){
+// 	cout << v->name << endl;
+// 	v->visited = true;
+
+// 	queue<vertex*> q;
+// 	q.push(v);
+
+// 	vertex *n;
+
+// 	while(!q.empty()){
+// 		n = q.front();
+// 		q.pop();
+
+// 		for(int i = 0; i < n->Edges.size(); i++){
+// 			if(!n->Edges[i].v->visited){
+// 				n->Edges[i].v->visited = true;
+// 				q.push(n->Edges[i].v);
+// 				cout << n->Edges[i].v->name << endl;
+// 			}
+// 		}
+// 	}
+// }
+
+// void Graph::DFT_traversal(vertex *v){
+// 	cout << v->name << endl;
+// 	DFT_recursive(v);
+// }
+
+void Graph::sortRecommendations(){
+		
+}
+
+void Graph::setWeights(vector<vertex*> recommendations){
+	float distance;
+    float rating;
+    int count;
+    float weight;
+	for(int i = 0; i < recommendations.size(); i++){
+		distance = recommendations[i]->distance;
+		rating = recommendations[i]->rating;
+		count = recommendations[i]->count;
+		weight = 5*count + 3*rating - 2*distance;
+		recommendations[i]->weight = weight;
 	}
 }
 
-void Graph::BFT_traversal(vertex *v){
-	cout << v->name << endl;
-	v->visited = true;
 
-	queue<vertex*> q;
-	q.push(v);
-
-	vertex *n;
-
-	while(!q.empty()){
-		n = q.front();
-		q.pop();
-
-		for(int i = 0; i < n->Edges.size(); i++){
-			if(!n->Edges[i].v->visited){
-				n->Edges[i].v->visited = true;
-				q.push(n->Edges[i].v);
-				cout << n->Edges[i].v->name << endl;
-			}
-		}
+bool Graph::inRecommendations(vertex *v, vector<vertex*> recommendations){
+	for(int i = 0; i < recommendations.size(); i++){
+		if(recommendations[i]->name == v->name)
+			return true;
 	}
-}
 
-void Graph::DFT_traversal(vertex *v){
-	cout << v->name << endl;
-	DFT_recursive(v);
+	return false;
 }
 
 
 void Graph::recommend(string restaurantName){
-	vertex *found = findVertex(restaurantName);
 
-	if(found != nullptr){
-		if(found->Edges.size() >= 5){
-			cout << "Top 5 related restaurants for " << restaurantName << ":" << endl;
-			for(int i = 0; i < 5; i++){
-				displayVertex(found->Edges[i].v);
-			}
-		}else{
-			cout << "Top " << found->Edges.size() << " related restaurants for " << restaurantName << ":" << endl;
-			for(int i = 0; i < found->Edges.size(); i++){
-				displayVertex(found->Edges[i].v);
+	vector<vertex*> recommendations;
+
+	for(int i = 0; i < savedRestaurants.size(); i++){
+		
+		for(int j = 0; j < savedRestaurants[i]->Edges.size(); j++){
+			if(!inRecommendations(savedRestaurants[i]->Edges[j].v, recommendations) && !savedRestaurants[i]->Edges[j].v->saved){
+				recommendations.push_back(savedRestaurants[i]->Edges[j].v);
+			}else{
+				savedRestaurants[i]->Edges[j].v->count++;
 			}
 		}
+	}
+
+
+	setWeights(recommendations);
+
+	vector<vertex> tempRec;
+
+	for(int i = 0; i < recommendations.size(); i++){
+		tempRec.push_back(*recommendations[i]);
+	}
+
+	sort(tempRec.begin(), tempRec.end());
+
+
+
+
+	if(recommendations.size() >= 5){
+		cout << "Top 5 related restaurants: " << endl;
+		for(int i = 0; i < 5; i++){
+			displayVertex(&tempRec[i]);
+			}
+	}else{
+		cout << "Top " << recommendations.size() << " related restaurants:" << endl;
+		for(int i = 0; i < recommendations.size(); i++){
+			displayVertex(&tempRec[i]);
+		}
+	}
+
+	// vertex *found = findVertex(restaurantName);
+
+	// if(found != nullptr){
+	// 	if(found->Edges.size() >= 5){
+	// 		cout << "Top 5 related restaurants for " << restaurantName << ":" << endl;
+	// 		for(int i = 0; i < 5; i++){
+	// 			displayVertex(found->Edges[i].v);
+	// 		}
+	// 	}else{
+	// 		cout << "Top " << found->Edges.size() << " related restaurants for " << restaurantName << ":" << endl;
+	// 		for(int i = 0; i < found->Edges.size(); i++){
+	// 			displayVertex(found->Edges[i].v);
+	// 		}
+	// 	}
 
 		
+	// }
+}
+
+void Graph::saveRestaurant(string restaurantName){
+	bool found = false;
+	for(int i = 0; i < savedRestaurants.size(); i++){
+		if(savedRestaurants[i]->name == restaurantName){
+			found = true;
+			savedRestaurants[i]->count++;
+		}
+	}
+
+	if(!found){
+		vertex *v = findVertex(restaurantName);
+		savedRestaurants.push_back(v);
+		v->saved = true;
+		v->count++;
 	}
 }
 
@@ -201,4 +287,6 @@ void Graph::displayVertex(vertex *v){
 	cout << "	Location: " << v->location<< endl;
 	cout << "	Distance: " << v->distance << " miles" << endl;
 	cout << "	Rating: " << v->rating << endl;
+	cout << "	Count: " << v->count << endl;
+	cout << "	Weight: " << v->weight << endl;
 }

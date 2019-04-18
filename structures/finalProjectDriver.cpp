@@ -9,6 +9,8 @@ using namespace std;
 
 int main(int argc, char *argv[]){
 
+	//User user0;
+
 	Graph g0;
 
 	ifstream inStream;
@@ -45,7 +47,18 @@ int main(int argc, char *argv[]){
 		//g0.displayEdges();
 
 		//recommend a restaurant, sorted by restaurant rating
-		g0.recommend("Oak");
+		g0.saveRestaurant("Cosmo's Pizza");
+		g0.saveRestaurant("Oak");
+		g0.saveRestaurant("The Sink");
+		g0.saveRestaurant("The Boulder Cork");
+		g0.saveRestaurant("Efrain's II Mexican Restaurant");
+
+		g0.recommend("jfj");
+
+
+		
+
+
 
 
 
