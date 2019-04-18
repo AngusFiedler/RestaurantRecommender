@@ -39,7 +39,7 @@ class Graph
     //void printDFT();
     //void printBFT();
     //void setAllVerticesUnvisited();
-    void recommend(string restaurantName);
+    void recommend();
     void displayVertex(vertex *v);
     void buildEdges();
     void saveRestaurant(string restaurantName);

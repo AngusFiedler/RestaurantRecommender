@@ -53,7 +53,7 @@ int main(int argc, char *argv[]){
 		g0.saveRestaurant("The Boulder Cork");
 		g0.saveRestaurant("Efrain's II Mexican Restaurant");
 
-		g0.recommend("jfj");
+		g0.recommend();
 
 
 		

@@ -203,7 +203,7 @@ bool Graph::inRecommendations(vertex *v, vector<vertex*> recommendations){
 }
 
 
-void Graph::recommend(string restaurantName){
+void Graph::recommend(){
 
 	vector<vertex*> recommendations;
 
