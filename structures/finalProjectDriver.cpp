@@ -7,6 +7,7 @@ using namespace std;
 
 #include "finalProject.h"
 
+
 int main(int argc, char *argv[]){
 
 	//User user0;
@@ -74,12 +75,13 @@ int main(int argc, char *argv[]){
 	//done building reference graph and edges. Start UI
 
 	string choice = "0";
-	while(stoi(choice) != 4){
+	while(stoi(choice) != 5){
 		cout << "======Main Menu======" << endl;
 		cout << "1. Save a new restaurant" << endl;
 		cout << "2. Get recommendations" << endl;
-		cout << "3. Show all Restaurants" << endl;
-		cout << "4. Quit" << endl;
+		cout << "3. Show saved restaurants" << endl;
+		cout << "4. Show all restaurants" << endl;
+		cout << "5. Quit" << endl;
 
 		getline(cin, choice);
 
@@ -103,10 +105,14 @@ int main(int argc, char *argv[]){
 				break;
 			}
 			case 3:{
-				g0.displayAllVertices();
+				g0.displaySaved();
 				break;
 			}
 			case 4:{
+				g0.displayAllVertices();
+				break;
+			}
+			case 5:{
 				break;
 			}
 		}

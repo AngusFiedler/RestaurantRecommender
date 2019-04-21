@@ -5,6 +5,7 @@ using namespace std;
 
 #include "finalProject.h"
 
+
 bool operator<(const vertex& v1, const vertex& v2){return v1.weight > v2.weight;}
 
 Graph::Graph(){
@@ -187,7 +188,7 @@ void Graph::setWeights(vector<vertex*> recommendations){
 		distance = recommendations[i]->distance;
 		rating = recommendations[i]->rating;
 		count = recommendations[i]->count;
-		weight = 5*count + 3*rating - 2*distance;
+		weight = 3*count + 3*rating - 2*distance;
 		recommendations[i]->weight = weight;
 	}
 }
@@ -206,6 +207,9 @@ bool Graph::inRecommendations(vertex *v, vector<vertex*> recommendations){
 void Graph::recommend(){
 
 	vector<vertex*> recommendations;
+
+	if(savedRestaurants.size() == 0)
+		return;
 
 	for(int i = 0; i < savedRestaurants.size(); i++){
 		
@@ -229,7 +233,7 @@ void Graph::recommend(){
 
 	sort(tempRec.begin(), tempRec.end());
 
-
+	buildJSON(tempRec);
 
 
 	if(recommendations.size() >= 5){
@@ -295,4 +299,52 @@ void Graph::displayAllVertices(){
 	for(int i = 0; i < vertices.size(); i++){
 		displayVertex(&vertices[i]);
 	}
+}
+
+void Graph::displaySaved(){
+	for(int i = 0; i < savedRestaurants.size(); i++){
+		displayVertex(savedRestaurants[i]);
+	}
+}
+
+
+void Graph::buildJSON(vector<vertex> tempRec){
+	vector<jsonVertex> outs(5);
+
+	for(int i = 0; i < 5; i++){
+		outs[i].name = tempRec[i].name;
+		outs[i].category = tempRec[i].category;
+		outs[i].location = tempRec[i].location;
+		outs[i].distance = tempRec[i].distance;
+		outs[i].rating = tempRec[i].rating;
+		outs[i].category = tempRec[i].category;
+	}
+
+	//FILE STREAM METHOD
+
+	// ofstream writeFile1("1.json");
+	// WriteJSON(writeFile1, outs[0]);
+
+	// ofstream writeFile2("2.json");
+	// WriteJSON(writeFile2, outs[1]);
+
+	// ofstream writeFile3("3.json");
+	// WriteJSON(writeFile3, outs[2]);
+
+	// ofstream writeFile4("4.json");
+	// WriteJSON(writeFile4, outs[3]);
+
+	// ofstream writeFile5("5.json");
+	// WriteJSON(writeFile5, outs[4]);
+
+
+	//STRING VARIABLE METHOD:
+
+	string rec1 = ToJSON(outs[0]);
+	string rec2 = ToJSON(outs[1]);
+	string rec3 = ToJSON(outs[2]);
+	string rec4 = ToJSON(outs[3]);
+	string rec5 = ToJSON(outs[4]);
+
+
 }
