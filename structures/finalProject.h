@@ -12,7 +12,6 @@ class Edge
 {
 public:
     vertex *v;
-    //float distance;
 };
 
 /*this is the struct for each vertex in the graph. */
@@ -73,11 +72,7 @@ class Graph
     void addEdge(std::string restaurant1, std::string restaurant2);
     vertex *findVertex(std::string name);
     void displayEdges();
-    //void printDFT();
-    //void printBFT();
-    //void setAllVerticesUnvisited();
     void recommend();
-    void displayVertex(vertex *v);
     void buildEdges();
     void saveRestaurant(string restaurantName);
     void displayAllVertices();
@@ -88,14 +83,13 @@ class Graph
     std::vector<vertex> vertices; //stores vertices
 
     std::vector<vertex*> savedRestaurants;
-
+    
+    void displayVertex(vertex *v);
     bool inEdges(vertex *v1, vertex *v2);
     bool inRecommendations(vertex *v, vector<vertex*> recommendations);
     void setWeights(vector<vertex*> recommendations);
     void sortRecommendations();
     float calcWeight(vertex *v);
-    //void BFT_traversal(vertex *v);
-    //void DFT_traversal(vertex *v);
 
 };
 
@@ -107,15 +101,3 @@ BEGIN_CLASS_DESCRIPTOR(jsonVertex)
    CLASS_DESCRIPTOR_ENTRY(distance)
    CLASS_DESCRIPTOR_ENTRY(rating)
 END_CLASS_DESCRIPTOR()
-
-// class User
-// {
-// public:
-//     Graph g0;
-// 	void saveRestaurant(string restaurantName);
-// 	void getRecommend(string restaurantName);
-// private:
-// 	// string username;
-// 	// string password;
-// 	std::vector<vertex> savedRestaurants;
-// };

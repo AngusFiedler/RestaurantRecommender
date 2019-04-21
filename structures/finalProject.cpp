@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <queue>
 using namespace std;
 
 #include "finalProject.h"
@@ -16,9 +15,6 @@ Graph::~Graph(){
 
 }
 
-float calcWeight(vertex *v){
-
-}
 
 void Graph::addVertex(string restaurantName, string category, string location, float rating, float distance){
 	vertex v1;
@@ -102,28 +98,6 @@ void Graph::displayEdges(){
 	}
 }
 
-// void Graph::setAllVerticesUnvisited(){
-// 	for(int i = 0; i < vertices.size(); i++){
-// 		vertices[i].visited = false;
-// 	}
-// }
-
-// void Graph::printDFT(){
-// 	setAllVerticesUnvisited();
-// 	for(int i = 0; i < vertices.size(); i++){
-// 		if(!vertices[i].visited)
-// 			DFT_traversal(&vertices[i]);
-// 	}
-// }
-
-// void Graph::printBFT(){
-// 	setAllVerticesUnvisited();
-// 	for(int i = 0; i < vertices.size(); i++){
-// 		if(!vertices[i].visited)
-// 			BFT_traversal(&vertices[i]);
-// 	}
-// }
-
 
 vertex* Graph::findVertex(string name){
 	vertex *found = nullptr;
@@ -137,47 +111,6 @@ vertex* Graph::findVertex(string name){
 	return found;
 }
 
-// void DFT_recursive(vertex *v){
-// 	v->visited = true;
-// 	for(int i = 0; i < v->Edges.size(); i++){
-// 		if(!v->Edges[i].v->visited){
-// 			cout << v->Edges[i].v->name << endl;
-// 			DFT_recursive(v->Edges[i].v);
-// 		}
-// 	}
-// }
-
-// void Graph::BFT_traversal(vertex *v){
-// 	cout << v->name << endl;
-// 	v->visited = true;
-
-// 	queue<vertex*> q;
-// 	q.push(v);
-
-// 	vertex *n;
-
-// 	while(!q.empty()){
-// 		n = q.front();
-// 		q.pop();
-
-// 		for(int i = 0; i < n->Edges.size(); i++){
-// 			if(!n->Edges[i].v->visited){
-// 				n->Edges[i].v->visited = true;
-// 				q.push(n->Edges[i].v);
-// 				cout << n->Edges[i].v->name << endl;
-// 			}
-// 		}
-// 	}
-// }
-
-// void Graph::DFT_traversal(vertex *v){
-// 	cout << v->name << endl;
-// 	DFT_recursive(v);
-// }
-
-void Graph::sortRecommendations(){
-		
-}
 
 void Graph::setWeights(vector<vertex*> recommendations){
 	float distance;
@@ -248,23 +181,6 @@ void Graph::recommend(){
 		}
 	}
 
-	// vertex *found = findVertex(restaurantName);
-
-	// if(found != nullptr){
-	// 	if(found->Edges.size() >= 5){
-	// 		cout << "Top 5 related restaurants for " << restaurantName << ":" << endl;
-	// 		for(int i = 0; i < 5; i++){
-	// 			displayVertex(found->Edges[i].v);
-	// 		}
-	// 	}else{
-	// 		cout << "Top " << found->Edges.size() << " related restaurants for " << restaurantName << ":" << endl;
-	// 		for(int i = 0; i < found->Edges.size(); i++){
-	// 			displayVertex(found->Edges[i].v);
-	// 		}
-	// 	}
-
-		
-	// }
 }
 
 void Graph::saveRestaurant(string restaurantName){
