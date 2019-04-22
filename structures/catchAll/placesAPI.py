@@ -231,7 +231,7 @@ def places(client, query, location=None, radius=None, language=None,
 
 def main():
     
-    gmaps = googlemaps.Client(key='AIzaSyC5v5St_6F7V2v0l1k8M4rBSd7h0rj6w18')
+    gmaps = googlemaps.Client(key='YOUR API KEY')
 
     g = geocoder.ip('me')
 
