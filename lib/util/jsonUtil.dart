@@ -4,30 +4,28 @@ import 'package:http/http.dart' as http;
 
 //Class for json data
 class Post {
-  final int userId;
-  final int id;
-  final String title;
-  final String body;
+  final String category;
+  final String location;
+  final double rating;
   final String restaurantName;
 
-  Post({this.userId, this.id, this.title, this.body, this.restaurantName});
+  Post({this.category, this.location, this.rating, this.restaurantName});
 
   factory Post.fromJson(Map<String, dynamic> json) {
     return Post(
-      userId: json['userId'],
-      id: json['id'],
-      title: json['title'],
-      body: json['body'],
-      restaurantName: json['restaurantName']
+      category: json['category'],
+      location: json['location'],
+      rating: json['rating'],
+      restaurantName: json['name']
     );
   }
 
   Map toMap() {
     var map = new Map<String, dynamic>();
-    map["userId"] = userId;
-    map["title"] = title;
-    map["body"] = body;
-    //map["restaurantname"] = restaurantName;
+    map["category"] = category;
+    map["location"] = location;
+    map["rating"] = rating;
+    map["restaurantname"] = restaurantName;
     return map;
   }
 }
@@ -35,13 +33,13 @@ class Post {
 
 class JsonUtil {
   //test url: https://jsonplaceholder.typicode.com/posts/1
-  String recieveURL = "https://api.myjson.com/bins/1cptsc";
+  String recieveURL = "https://api.myjson.com/bins/";
   String sendURL = "https://httpbin.org/ip";
 
   //retreives data from post
-  Future<Post> fetchPost() async {
+  Future<Post> fetchPost(String id) async {
     final response =
-        await http.get(recieveURL);
+        await http.get(recieveURL+id);
     if (response.statusCode == 200) {
       // If the call to the server was successful, parse the JSON
       return Post.fromJson(json.decode(response.body));

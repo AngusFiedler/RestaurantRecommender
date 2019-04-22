@@ -44,8 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       lat = "Latitude: " + userLocation.latitude.toString();
       longitude = "Longitude: " + userLocation.longitude.toString();
-      speed = "Speed: " + userLocation.speed.toString();
-      JsonUtil().fetchPost();
+      //JsonUtil().fetchPost();
     });
   }
 
@@ -57,34 +56,19 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: Center(
           child: Column(
-            //mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              FutureBuilder<Post>(
-                future: JsonUtil().fetchPost(),
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    //return Text(snapshot.data.body);
-                    return myCard(snapshot);
-                  } else if (snapshot.hasError) {
-                    return Text("${snapshot.error}");
-                  }
-                  // By default, show a loading spinner
-                  return CircularProgressIndicator();
-                },
+              Text(
+                "Top Recommendation",
+                style: TextStyle(fontSize: 25),
               ),
-              FlatButton(
-                child: Text(
-                  "Refresh Data",
-                  style: TextStyle(color: Colors.white),
-                ),
-                onPressed: () {
-                  refreshData();
-                },
-                color: Colors.red,
-              ),
+              futureBuilderReco("111y1o"),
+              futureBuilderReco("fohfg"),
+              futureBuilderReco("yqcsc"),
+              futureBuilderReco("15a4fw"),
+              futureBuilderReco("c60yk"),
+              myFlatZBtn(),
               Text(lat),
               Text(longitude),
-              Text(speed),
             ],
           ),
         ),
@@ -93,16 +77,41 @@ class _MyHomePageState extends State<MyHomePage> {
         );
   }
 
+  FutureBuilder<Post> futureBuilderReco(String id) {
+    return FutureBuilder<Post>(
+      future: JsonUtil().fetchPost(id),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return myCard(snapshot);
+        } else if (snapshot.hasError) {
+          return Text("${snapshot.error}");
+        }
+        // By default, show a loading spinner
+        return CircularProgressIndicator();
+      },
+    );
+  }
+
+  FlatButton myFlatZBtn() {
+    return FlatButton(
+      child: Text(
+        "Refresh Data",
+        style: TextStyle(color: Colors.white),
+      ),
+      onPressed: () {
+        refreshData();
+      },
+      color: Colors.red,
+    );
+  }
+
   Card myCard(AsyncSnapshot<Post> post) {
     return Card(
         child: Padding(
       padding: EdgeInsets.all(20),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(
-            "Top Recommendation",
-            style: TextStyle(fontSize: 25),
-          ),
           recoTextWidget(post),
         ],
       ),
@@ -124,18 +133,26 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget recoTextWidget(AsyncSnapshot<Post> post) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Divider(),
-        Text(post.data.id.toString()),
-        Divider(),
-        Text(post.data.title),
-        Divider(),
-        Text(post.data.body),
-        Divider(),
-        Text("4. INSERT HERE"),
-        Divider(),
-        Text("5. INSERT HERE"),
+        Text("Name: " + post.data.restaurantName),
+        Text("Location: " + post.data.location),
+        stars(post.data.rating),
+        Text("Rating: " + post.data.rating.toString()),
       ],
     );
+  }
+  Widget stars(double count){
+    List<Widget> list = new List<Widget>();
+    double test;
+    for(var i = 0; i < count-1; i++){
+        list.add(new Icon(Icons.star));
+        test = i.toDouble() + 1;
+    }
+    double result = count - test;
+    if(result >= 0.5){
+      list.add(new Icon(Icons.star_half));
+    }
+    return new Row(children: list);
   }
 }
