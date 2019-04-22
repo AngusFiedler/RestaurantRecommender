@@ -166,7 +166,9 @@ void Graph::recommend(){
 
 	sort(tempRec.begin(), tempRec.end());
 
-	buildJSON(tempRec);
+	// IF USING CATCHALL METHOD, BUILD JSON. IF TERMINAL METHOD, COUT RECOMMENDATIONS
+
+	//buildJSON(tempRec);
 
 
 	if(recommendations.size() >= 5){
@@ -224,7 +226,10 @@ void Graph::displaySaved(){
 }
 
 
+
 void Graph::buildJSON(vector<vertex> tempRec){
+	// SEPERATE RESTAURANT METHOD
+
 	vector<jsonVertex> outs(5);
 
 	for(int i = 0; i < 5; i++){
@@ -236,31 +241,60 @@ void Graph::buildJSON(vector<vertex> tempRec){
 		outs[i].category = tempRec[i].category;
 	}
 
+
+
+
 	//FILE STREAM METHOD
 
-	// ofstream writeFile1("1.json");
-	// WriteJSON(writeFile1, outs[0]);
+	ofstream writeFile1("1.json");
+	WriteJSON(writeFile1, outs[0]);
 
-	// ofstream writeFile2("2.json");
-	// WriteJSON(writeFile2, outs[1]);
+	ofstream writeFile2("2.json");
+	WriteJSON(writeFile2, outs[1]);
 
-	// ofstream writeFile3("3.json");
-	// WriteJSON(writeFile3, outs[2]);
+	ofstream writeFile3("3.json");
+	WriteJSON(writeFile3, outs[2]);
 
-	// ofstream writeFile4("4.json");
-	// WriteJSON(writeFile4, outs[3]);
+	ofstream writeFile4("4.json");
+	WriteJSON(writeFile4, outs[3]);
 
-	// ofstream writeFile5("5.json");
-	// WriteJSON(writeFile5, outs[4]);
+	ofstream writeFile5("5.json");
+	WriteJSON(writeFile5, outs[4]);
 
 
 	//STRING VARIABLE METHOD:
 
-	string rec1 = ToJSON(outs[0]);
-	string rec2 = ToJSON(outs[1]);
-	string rec3 = ToJSON(outs[2]);
-	string rec4 = ToJSON(outs[3]);
-	string rec5 = ToJSON(outs[4]);
+	// string rec1 = ToJSON(outs[0]);
+	// string rec2 = ToJSON(outs[1]);
+	// string rec3 = ToJSON(outs[2]);
+	// string rec4 = ToJSON(outs[3]);
+	// string rec5 = ToJSON(outs[4]);
 
+
+}
+
+
+void Graph::saveData(){
+	ofstream outStream;
+
+	outStream.open("savedRestaurants.txt");
+
+	for(int i = 0; i < savedRestaurants.size(); i++){
+		outStream << savedRestaurants[i]->name << endl;
+	}
+
+	outStream.close();
+}
+
+void Graph::loadData(){
+	ifstream inStream;
+	inStream.open("savedRestaurants.txt");
+
+	string name;
+	while(getline(inStream, name)){
+		saveRestaurant(name);
+	}
+
+	inStream.close();
 
 }

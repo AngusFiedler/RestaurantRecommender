@@ -7,18 +7,26 @@ using namespace std;
 
 #include "finalProject.h"
 
+bool catchAll(string saveName);
 
 int main(int argc, char *argv[]){
 
-	//User user0;
+	//CATCH ALL FUNCTION METHOD FOR SERVER
+	// if(catchAll("Firehouse Subs")){
+	// 	cout << "Success" << endl;
+	// }else{
+	// 	cout << "Failed" << endl;
+	// }
+
+
+
+	// TERMINAL INTERFACE METHOD:
 
 	Graph g0;
 
 	ifstream inStream;
-	//cout << argc << endl;
 
 	for(int i = 1; i < argc; i++){
-		//cout << argv[i] << endl;
 		inStream.open(argv[i]);
 
 		stringstream ss;
@@ -27,10 +35,6 @@ int main(int argc, char *argv[]){
 		string category;
 
 		string location;
-		string street;
-		string city;
-		string state;
-		string country;
 
 		string rating;
 		string distance;
@@ -71,6 +75,9 @@ int main(int argc, char *argv[]){
 
 	//done reading in restaurants. build edges based on category
 	g0.buildEdges();
+
+	//read in previously saved data
+	g0.loadData();
 
 	//done building reference graph and edges. Start UI
 
@@ -113,6 +120,7 @@ int main(int argc, char *argv[]){
 				break;
 			}
 			case 5:{
+				g0.saveData();
 				break;
 			}
 		}
@@ -123,6 +131,68 @@ int main(int argc, char *argv[]){
 
 	return 0;
 }
+
+
+bool catchAll(string saveName){
+	Graph g0;
+	ifstream inStream;
+
+	vector<string> files = {"American.csv", "Chinese.csv", "Indian.csv", "Italian.csv", "Mexican.csv", "Pizza.csv", "Sandwiches.csv"};
+
+	for(int i = 0; i < files.size(); i++){
+		inStream.open(files[i]);
+		stringstream ss;
+		string line;
+		string name;
+		string category;
+
+		string location;
+
+		string rating;
+		string distance;
+
+		if(inStream.is_open()){
+			while(getline(inStream, line)){
+				//cout << line << endl;
+				ss << line;
+				getline(ss, name, '"');
+				getline(ss, rating, '"');
+				getline(ss, location, '"');
+	
+				category = files[i];
+				//category.erase (category.begin(), category.begin()+2);
+				category.erase(category.end()-4, category.end());
+				getline(ss, distance);
+
+				g0.addVertex(name, category, location, stof(rating), stof(distance));
+
+				ss.clear();
+			}
+			inStream.close();	
+
+
+		}
+	}
+	g0.buildEdges();
+
+	cout << g0.findVertex(saveName) << endl;
+
+	g0.loadData();
+
+	if(g0.findVertex(saveName)){
+		g0.saveRestaurant(saveName);
+	}else{
+		return false;
+	}
+
+	g0.recommend();
+
+	g0.saveData();
+
+	return true;
+
+}
+
 
 
 

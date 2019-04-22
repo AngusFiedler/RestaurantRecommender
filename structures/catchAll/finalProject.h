@@ -38,29 +38,29 @@ public:
     float distance;
     float rating;
 
-//     std::string name2;
-//     std::string category2;
-//     std::string location2;
-//     float distance2;
-//     float rating2;
+    // std::string name2;
+    // std::string category2;
+    // std::string location2;
+    // float distance2;
+    // float rating2;
 
-//     std::string name3;
-//     std::string category3;
-//     std::string location3;
-//     float distance3;
-//     float rating3;
+    // std::string name3;
+    // std::string category3;
+    // std::string location3;
+    // float distance3;
+    // float rating3;
 
-//     std::string name4;
-//     std::string category4;
-//     std::string location4;
-//     float distance4;
-//     float rating4;
+    // std::string name4;
+    // std::string category4;
+    // std::string location4;
+    // float distance4;
+    // float rating4;
 
-//     std::string name5;
-//     std::string category5;
-//     std::string location5;
-//     float distance5;
-//     float rating5;
+    // std::string name5;
+    // std::string category5;
+    // std::string location5;
+    // float distance5;
+    // float rating5;
 };
 
 class Graph
@@ -78,6 +78,8 @@ class Graph
     void displayAllVertices();
     void displaySaved();
     void buildJSON(vector<vertex> tempRec);
+    void saveData();
+    void loadData();
 
   private:
     std::vector<vertex> vertices; //stores vertices

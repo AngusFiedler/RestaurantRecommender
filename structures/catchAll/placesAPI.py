@@ -246,7 +246,7 @@ def main():
     chinese = places(gmaps, "chinese food", latlng)
     mexican = places(gmaps, "mexican food", latlng)
     indian = places(gmaps, "indian food", latlng)
-    sandwhiches = places(gmaps, "sandwhiches", latlng)
+    sandwiches = places(gmaps, "sandwiches", latlng)
 
 
 	# print(latlng)
@@ -302,13 +302,13 @@ def main():
 	    	distance = haversine(latlng[0], latlng[1], indian['results'][i]['geometry']['location']['lat'], indian['results'][i]['geometry']['location']['lng'])
 	    	writer.writerow([indian['results'][i]['name'], indian['results'][i]['rating'], indian['results'][i]['formatted_address'], distance])
 
-    with open('Sandwhiches.csv', mode='w', newline='') as csv_file:
+    with open('Sandwiches.csv', mode='w', newline='') as csv_file:
 	    fieldnames = ['name', 'rating', 'address', 'distance']
 	    writer = csv.writer(csv_file, delimiter='"')
 
 	    for i in range(20):
-	    	distance = haversine(latlng[0], latlng[1], sandwhiches['results'][i]['geometry']['location']['lat'], sandwhiches['results'][i]['geometry']['location']['lng'])
-	    	writer.writerow([sandwhiches['results'][i]['name'], sandwhiches['results'][i]['rating'], sandwhiches['results'][i]['formatted_address'], distance])
+	    	distance = haversine(latlng[0], latlng[1], sandwiches['results'][i]['geometry']['location']['lat'], sandwiches['results'][i]['geometry']['location']['lng'])
+	    	writer.writerow([sandwiches['results'][i]['name'], sandwiches['results'][i]['rating'], sandwiches['results'][i]['formatted_address'], distance])
 	
 
 
