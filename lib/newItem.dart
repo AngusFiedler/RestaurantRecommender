@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'util/jsonUtil.dart';
+//import 'package:shared_preferences/shared_preferences.dart';
 
 class NewItemWidget extends StatefulWidget {
   NewItemWidget({Key key}) : super(key: key);
@@ -8,13 +9,10 @@ class NewItemWidget extends StatefulWidget {
 }
 
 class _ItemState extends State<NewItemWidget> {
+  TextEditingController restaurantNameController = new TextEditingController();
 
-  void addData(String restaurantName, String category) async{
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    List<String> restaurantNameList = prefs.getStringList("RestaurantNameKey");
-    //List<String> restaurantNameList = prefs.getStringList("RestaurantNameKey");
-    restaurantNameList.add(restaurantName);
-    prefs.setStringList("RestaurantNameKey", restaurantNameList);
+  void addData(String restaurantName) async {
+    JsonUtil().createPost(restaurantName);
   }
 
   @override
@@ -45,25 +43,32 @@ class _ItemState extends State<NewItemWidget> {
           child: Column(
             children: <Widget>[
               Text("What Restaurant did you go to?"),
-              TextField(),
+              TextField(
+                controller: restaurantNameController,
+              ),
               Padding(
                 padding: EdgeInsets.all(10),
               ),
-              Text("What category was this restaurant?"),
-              TextField(),
               Padding(
                 padding: EdgeInsets.all(10),
               ),
-              FlatButton(
-                child: Text(
-                  "Save Data",
-                  style: TextStyle(color: Colors.white),
-                ),
-                onPressed: () {},
-                color: Colors.red,
-              ),
+              saveBtn(),
             ],
           ),
         ));
+  }
+
+  Widget saveBtn() {
+    return FlatButton(
+      child: Text(
+        "Save Data",
+        style: TextStyle(color: Colors.white),
+      ),
+      onPressed: () {
+        addData(restaurantNameController.text);
+        print(restaurantNameController.text);
+      },
+      color: Colors.red,
+    );
   }
 }
