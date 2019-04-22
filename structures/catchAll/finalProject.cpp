@@ -24,7 +24,7 @@ void Graph::addVertex(string restaurantName, string category, string location, f
 	v1.distance = distance;
 	v1.rating = rating;
 	v1.saved = false;
-	v1.count = 1;
+	v1.count = 0;
 	vertices.push_back(v1);
 	
 }
@@ -121,7 +121,7 @@ void Graph::setWeights(vector<vertex*> recommendations){
 		distance = recommendations[i]->distance;
 		rating = recommendations[i]->rating;
 		count = recommendations[i]->count;
-		weight = 3*count + 3*rating - 2*distance;
+		weight = count + 3*rating - 2*distance;
 		recommendations[i]->weight = weight;
 	}
 }
@@ -149,6 +149,7 @@ void Graph::recommend(){
 		for(int j = 0; j < savedRestaurants[i]->Edges.size(); j++){
 			if(!inRecommendations(savedRestaurants[i]->Edges[j].v, recommendations) && !savedRestaurants[i]->Edges[j].v->saved){
 				recommendations.push_back(savedRestaurants[i]->Edges[j].v);
+
 			}else{
 				savedRestaurants[i]->Edges[j].v->count++;
 			}
@@ -157,6 +158,19 @@ void Graph::recommend(){
 
 
 	setWeights(recommendations);
+
+	//after weights are set, reset counts so they reflect the # of times 
+	//restaurant has been saved
+
+	for(int i = 0; i < savedRestaurants.size(); i++){
+		
+		for(int j = 0; j < savedRestaurants[i]->Edges.size(); j++){
+			if(savedRestaurants[i]->Edges[j].v->saved){
+				savedRestaurants[i]->Edges[j].v->count--;
+			}
+		}
+	}
+
 
 	vector<vertex> tempRec;
 
@@ -170,10 +184,13 @@ void Graph::recommend(){
 
 	buildJSON(tempRec);
 
+	// string numRec;
+	// cout << "How many recommendations do you want to see?" << endl;
+	// getline(cin, numRec);
 
-	// if(recommendations.size() >= 5){
-	// 	cout << "Top 5 related restaurants: " << endl;
-	// 	for(int i = 0; i < 5; i++){
+	// if(recommendations.size() >= stoi(numRec)){
+	// 	cout << "Top " << numRec << " related restaurants: " << endl;
+	// 	for(int i = 0; i < stoi(numRec); i++){
 	// 		displayVertex(&tempRec[i]);
 	// 		}
 	// }else{
@@ -207,6 +224,7 @@ void Graph::displayVertex(vertex *v){
 	cout << v->name << endl;
 	cout << "	Category: " << v->category << endl;
 	cout << "	Location: " << v->location<< endl;
+	//distance below is "as the crow flies"
 	cout << "	Distance: " << v->distance << " miles" << endl;
 	cout << "	Rating: " << v->rating << endl;
 	cout << "	Count: " << v->count << endl;
@@ -277,10 +295,10 @@ void Graph::buildJSON(vector<vertex> tempRec){
 void Graph::saveData(){
 	ofstream outStream;
 
-	outStream.open("savedRestaurants.txt");
+	outStream.open("savedRestaurants.csv");
 
 	for(int i = 0; i < savedRestaurants.size(); i++){
-		outStream << savedRestaurants[i]->name << endl;
+		outStream << savedRestaurants[i]->name << "," << savedRestaurants[i]->count << endl;
 	}
 
 	outStream.close();
@@ -288,11 +306,17 @@ void Graph::saveData(){
 
 void Graph::loadData(){
 	ifstream inStream;
-	inStream.open("savedRestaurants.txt");
+	inStream.open("savedRestaurants.csv");
 
 	string name;
-	while(getline(inStream, name)){
-		saveRestaurant(name);
+	string count;
+	while(getline(inStream, name, ',')){
+		getline(inStream, count);
+
+		for(int i = 0; i < stoi(count); i++){
+			saveRestaurant(name);
+		}
+
 	}
 
 	inStream.close();
