@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:location/location.dart';
 import 'util/jsonUtil.dart';
 import 'newItem.dart';
-import 'dart:async';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
+//import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(MyApp());
 
@@ -30,8 +28,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   String lat = "Latitude: NULL",
-      longitude = "Longitude: NULL",
-      speed = "Speed: ";
+      longitude = "Longitude: NULL";
   Location _location = new Location();
 
   //refreshes the users current location
@@ -54,23 +51,29 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: Center(
-          child: Column(
-            children: <Widget>[
-              Text(
-                "Top Recommendation",
-                style: TextStyle(fontSize: 25),
+        body: ListView(
+          children: <Widget>[
+            Center(
+              child: Column(
+                children: <Widget>[
+                  /*
+                  Text(
+                    "Top Recommendation",
+                    style: TextStyle(fontSize: 25),
+                  ),
+                  */
+                  futureBuilderReco("111y1o"),
+                  futureBuilderReco("fohfg"),
+                  futureBuilderReco("yqcsc"),
+                  futureBuilderReco("15a4fw"),
+                  futureBuilderReco("c60yk"),
+                  myFlatZBtn(),
+                  Text(lat),
+                  Text(longitude),
+                ],
               ),
-              futureBuilderReco("111y1o"),
-              futureBuilderReco("fohfg"),
-              futureBuilderReco("yqcsc"),
-              futureBuilderReco("15a4fw"),
-              futureBuilderReco("c60yk"),
-              myFlatZBtn(),
-              Text(lat),
-              Text(longitude),
-            ],
-          ),
+            ),
+          ],
         ),
         floatingActionButton:
             floatingAction() // This trailing comma makes auto-formatting nicer for build methods.
@@ -135,23 +138,31 @@ class _MyHomePageState extends State<MyHomePage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text("Name: " + post.data.restaurantName),
+        Text(post.data.restaurantName, style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+        Divider(),
         Text("Location: " + post.data.location),
         stars(post.data.rating),
         Text("Rating: " + post.data.rating.toString()),
       ],
     );
   }
-  Widget stars(double count){
+
+  Widget stars(double count) {
     List<Widget> list = new List<Widget>();
     double test;
-    for(var i = 0; i < count-1; i++){
-        list.add(new Icon(Icons.star));
-        test = i.toDouble() + 1;
+    for (var i = 0; i < count - 1; i++) {
+      list.add(new Icon(
+        Icons.star,
+        color: Colors.yellow,
+      ));
+      test = i.toDouble() + 1;
     }
     double result = count - test;
-    if(result >= 0.5){
-      list.add(new Icon(Icons.star_half));
+    if (result >= 0.5) {
+      list.add(new Icon(
+        Icons.star_half,
+        color: Colors.yellow,
+      ));
     }
     return new Row(children: list);
   }
