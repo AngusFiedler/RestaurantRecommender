@@ -12,7 +12,17 @@ bool catchAll(string saveName);
 int main(int argc, char *argv[]){
 
 	//CATCH ALL FUNCTION METHOD FOR SERVER
-	if(catchAll("Oak")){
+
+	string argument;
+
+	for(int i = 1; i < argc; i++){
+		argument = argument + argv[i] + " ";
+	}
+
+	argument.erase(argument.end() - 1, argument.end());
+
+
+	if(catchAll(argument)){
 		cout << "Success" << endl;
 	}else{
 		cout << "Failed" << endl;
@@ -175,6 +185,7 @@ bool catchAll(string saveName){
 	}
 	g0.buildEdges();
 
+	cout << g0.findVertex(saveName) << endl;
 
 	g0.loadData();
 

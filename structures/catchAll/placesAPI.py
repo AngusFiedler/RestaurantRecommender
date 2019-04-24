@@ -7,7 +7,7 @@ import geocoder
 import csv
 
 from math import radians, cos, sin, asin, sqrt
-
+import os
 
 
 def haversine(lon1, lat1, lon2, lat2):
@@ -231,7 +231,7 @@ def places(client, query, location=None, radius=None, language=None,
 
 def main():
     
-    gmaps = googlemaps.Client(key='YOUR API KEY')
+    gmaps = googlemaps.Client(key='')
 
     g = geocoder.ip('me')
 
@@ -311,15 +311,12 @@ def main():
 	    	writer.writerow([sandwiches['results'][i]['name'], sandwiches['results'][i]['rating'], sandwiches['results'][i]['formatted_address'], distance])
 	
 
+    #done gathering data. Run C++ program
 
 
+    # testRestaurant = "River and Woods"
 
-	# print(test['results'][i]['name'])
-	# 		print(test['results'][i]['rating'])
-	# 		print(test['results'][i]['formatted_address'])
-	# 		print(test['results'][i]['geometry']['location']['lat'])
-	# 		print(test['results'][i]['geometry']['location']['lng'])
-	# 		print('\n')
+    # os.system("a.exe " + testRestaurant)
 
 
 if __name__ == '__main__':

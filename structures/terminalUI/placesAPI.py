@@ -231,7 +231,7 @@ def places(client, query, location=None, radius=None, language=None,
 
 def main():
     
-    gmaps = googlemaps.Client(key='YOUR API KEY')
+    gmaps = googlemaps.Client(key='')
 
     g = geocoder.ip('me')
 
@@ -248,8 +248,7 @@ def main():
     indian = places(gmaps, "indian food", latlng)
     sandwiches = places(gmaps, "sandwiches", latlng)
 
-
-	# print(latlng)
+    print(type(american['results'][0]))
 
     with open('American.csv', mode='w', newline='') as csv_file:
 	    fieldnames = ['name', 'rating', 'address', 'distance']

@@ -12,7 +12,17 @@ bool catchAll(string saveName);
 int main(int argc, char *argv[]){
 
 	//CATCH ALL FUNCTION METHOD FOR SERVER
-	// if(catchAll("Firehouse Subs")){
+
+	// string argument;
+
+	// for(int i = 1; i < argc; i++){
+	// 	argument = argument + argv[i] + " ";
+	// }
+
+	// argument.erase(argument.end() - 1, argument.end());
+
+
+	// if(catchAll(argument)){
 	// 	cout << "Success" << endl;
 	// }else{
 	// 	cout << "Failed" << endl;
