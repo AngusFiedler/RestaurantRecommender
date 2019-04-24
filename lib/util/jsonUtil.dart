@@ -33,8 +33,8 @@ class Post {
 
 class JsonUtil {
   //test url: https://jsonplaceholder.typicode.com/posts/1
-  String recieveURL = "https://api.myjson.com/bins/";
-  String sendURL = "https://httpbin.org/ip";
+  String recieveURL = "http://127.0.0.1:5000/static/";
+  String sendURL = "http://127.0.0.1:5000/foo";
 
   //retreives data from post
   Future<Post> fetchPost(String id) async {
@@ -56,6 +56,8 @@ class JsonUtil {
     if (statusCode < 200 || statusCode > 400 || json == null) {
       throw new Exception("Error while fetching data");
     }
+    print(response.body);
+    //return response.body;
     return Post.fromJson(json.decode(response.body));
   });
   }

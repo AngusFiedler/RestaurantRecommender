@@ -1,0 +1,221 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:1:1-33:12
+MERGED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:1:1-33:12
+MERGED from [:location] /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/build/location/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-10:12
+MERGED from [:url_launcher] /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-14:12
+MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-15.0.1.aar/53505fe09cff3ad29dd727e7c9d69d85/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-15.0.1.aar/a4c4a2d416d465ece38ab7914db4c60a/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-15.0.1.aar/b63365956dafe92f64f01abf15413f96/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-tasks-15.0.1.aar/acc07525c74f44be2bcfdfcabe07a27f/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-15.0.1.aar/1f5f33311130cbcfe926169aed53ff7a/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0-rc01.aar/e93d1d8df26c921a10bdbf037b2d7e3e/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/media-1.0.0-rc01.aar/6afd0c90c47c386203fa5e0d5c520a60/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0-rc01.aar/fe9484288c75ae7f4753115d61f66d73/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0-rc01.aar/360ec8e5c81ef3dec7a272a01e9d2bf0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0-rc01.aar/4c6ea6619a9870e66ad73d095c41e131/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/loader-1.0.0-rc01.aar/66139c897ecc7f7661a3a0c9a68de8a7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0-rc01.aar/da57ec4eba2e196c080cdd1c9ae998a5/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0-rc01.aar/9ca10121cd2885c0c85e74c593e8a3eb/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0-rc01.aar/5ab9b1591a7e991c21bade29621fac32/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0-rc01.aar/f80c9d995902bed1e43ddf689a6c36bb/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/customview-1.0.0-rc01.aar/f7d5bb75b184405195c8b8eba85638de/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0-rc01.aar/3defcf41ed7aac841a98f6daedbcf0fd/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0-rc01.aar/bbbd942c4db78e1aa6d06100106aa5df/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/core-1.0.0-rc01.aar/f31583e1fb0ab565644c22b145c13778/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0-rc01.aar/45cc0cb09ae93a947232556e214a310a/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.documentfile:documentfile:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0-rc01.aar/b1fc3c9d7574082d09e6ba9245ca9c97/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0-rc01.aar/063491d62039d99c7869435fce395135/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/print-1.0.0-rc01.aar/5f173426d742bfcad383e0eaf24ed3fa/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0-rc01.aar/74e3b76c3f91c81adfb0839085c78aa0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0-rc01.aar/e5305ea3c1c15d43284254a31ac5f874/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0-rc01.aar/9096d8ed52976d17436269aaae7ed14c/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0-rc01.aar/8a68eb9e8e63682934df4f3dd381355f/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0-rc01.aar/8ffde38875dcbf55c77e47aec685f1ed/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0-rc01.aar/7647bd8521c022cb947c3cd9fa9cca9c/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/debug/AndroidManifest.xml:1:1-8:12
+INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/debug/AndroidManifest.xml:1:1-8:12
+INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/debug/AndroidManifest.xml:1:1-8:12
+	package
+		ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:2:5-46
+		INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/debug/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:1:1-33:12
+		INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/debug/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:1:1-33:12
+		INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/debug/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:1:11-69
+application
+ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:9:5-32:19
+MERGED from [:url_launcher] /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher] /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-12:19
+MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-15.0.1.aar/53505fe09cff3ad29dd727e7c9d69d85/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-15.0.1.aar/53505fe09cff3ad29dd727e7c9d69d85/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-15.0.1.aar/a4c4a2d416d465ece38ab7914db4c60a/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-15.0.1.aar/a4c4a2d416d465ece38ab7914db4c60a/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-15.0.1.aar/b63365956dafe92f64f01abf15413f96/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-15.0.1.aar/b63365956dafe92f64f01abf15413f96/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-tasks-15.0.1.aar/acc07525c74f44be2bcfdfcabe07a27f/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-tasks-15.0.1.aar/acc07525c74f44be2bcfdfcabe07a27f/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-15.0.1.aar/1f5f33311130cbcfe926169aed53ff7a/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-15.0.1.aar/1f5f33311130cbcfe926169aed53ff7a/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.core:core:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/core-1.0.0-rc01.aar/f31583e1fb0ab565644c22b145c13778/AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/core-1.0.0-rc01.aar/f31583e1fb0ab565644c22b145c13778/AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0-rc01.aar/45cc0cb09ae93a947232556e214a310a/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0-rc01.aar/45cc0cb09ae93a947232556e214a310a/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/core-1.0.0-rc01.aar/f31583e1fb0ab565644c22b145c13778/AndroidManifest.xml:22:18-86
+	android:label
+		ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:11:9-44
+	android:icon
+		ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:12:9-43
+	android:name
+		ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:10:9-57
+activity#com.example.food_recommendation.MainActivity
+ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:13:9-31:20
+	android:launchMode
+		ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:15:13-43
+	android:hardwareAccelerated
+		ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:18:13-47
+	android:windowSoftInputMode
+		ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:19:13-55
+	android:configChanges
+		ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:17:13-144
+	android:theme
+		ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:16:13-47
+	android:name
+		ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:14:13-41
+meta-data#io.flutter.app.android.SplashScreenUntilFirstFrame
+ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:24:13-26:40
+	android:value
+		ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:26:17-37
+	android:name
+		ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:25:17-82
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:27:13-30:29
+action#android.intent.action.MAIN
+ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:28:17-68
+	android:name
+		ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:28:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:29:17-76
+	android:name
+		ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml:29:27-74
+uses-sdk
+INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml
+MERGED from [:location] /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/build/location/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:location] /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/build/location/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-15.0.1.aar/53505fe09cff3ad29dd727e7c9d69d85/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-15.0.1.aar/53505fe09cff3ad29dd727e7c9d69d85/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-15.0.1.aar/a4c4a2d416d465ece38ab7914db4c60a/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-15.0.1.aar/a4c4a2d416d465ece38ab7914db4c60a/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-15.0.1.aar/b63365956dafe92f64f01abf15413f96/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-15.0.1.aar/b63365956dafe92f64f01abf15413f96/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-tasks-15.0.1.aar/acc07525c74f44be2bcfdfcabe07a27f/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-tasks-15.0.1.aar/acc07525c74f44be2bcfdfcabe07a27f/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-15.0.1.aar/1f5f33311130cbcfe926169aed53ff7a/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-15.0.1.aar/1f5f33311130cbcfe926169aed53ff7a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0-rc01.aar/e93d1d8df26c921a10bdbf037b2d7e3e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0-rc01.aar/e93d1d8df26c921a10bdbf037b2d7e3e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/media-1.0.0-rc01.aar/6afd0c90c47c386203fa5e0d5c520a60/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/media-1.0.0-rc01.aar/6afd0c90c47c386203fa5e0d5c520a60/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0-rc01.aar/fe9484288c75ae7f4753115d61f66d73/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0-rc01.aar/fe9484288c75ae7f4753115d61f66d73/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0-rc01.aar/360ec8e5c81ef3dec7a272a01e9d2bf0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0-rc01.aar/360ec8e5c81ef3dec7a272a01e9d2bf0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0-rc01.aar/4c6ea6619a9870e66ad73d095c41e131/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0-rc01.aar/4c6ea6619a9870e66ad73d095c41e131/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/loader-1.0.0-rc01.aar/66139c897ecc7f7661a3a0c9a68de8a7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/loader-1.0.0-rc01.aar/66139c897ecc7f7661a3a0c9a68de8a7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0-rc01.aar/da57ec4eba2e196c080cdd1c9ae998a5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0-rc01.aar/da57ec4eba2e196c080cdd1c9ae998a5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0-rc01.aar/9ca10121cd2885c0c85e74c593e8a3eb/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0-rc01.aar/9ca10121cd2885c0c85e74c593e8a3eb/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0-rc01.aar/5ab9b1591a7e991c21bade29621fac32/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0-rc01.aar/5ab9b1591a7e991c21bade29621fac32/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0-rc01.aar/f80c9d995902bed1e43ddf689a6c36bb/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0-rc01.aar/f80c9d995902bed1e43ddf689a6c36bb/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/customview-1.0.0-rc01.aar/f7d5bb75b184405195c8b8eba85638de/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/customview-1.0.0-rc01.aar/f7d5bb75b184405195c8b8eba85638de/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0-rc01.aar/3defcf41ed7aac841a98f6daedbcf0fd/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0-rc01.aar/3defcf41ed7aac841a98f6daedbcf0fd/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0-rc01.aar/bbbd942c4db78e1aa6d06100106aa5df/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0-rc01.aar/bbbd942c4db78e1aa6d06100106aa5df/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/core-1.0.0-rc01.aar/f31583e1fb0ab565644c22b145c13778/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/core-1.0.0-rc01.aar/f31583e1fb0ab565644c22b145c13778/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0-rc01.aar/45cc0cb09ae93a947232556e214a310a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0-rc01.aar/45cc0cb09ae93a947232556e214a310a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0-rc01.aar/b1fc3c9d7574082d09e6ba9245ca9c97/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0-rc01.aar/b1fc3c9d7574082d09e6ba9245ca9c97/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0-rc01.aar/063491d62039d99c7869435fce395135/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0-rc01.aar/063491d62039d99c7869435fce395135/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/print-1.0.0-rc01.aar/5f173426d742bfcad383e0eaf24ed3fa/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/print-1.0.0-rc01.aar/5f173426d742bfcad383e0eaf24ed3fa/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0-rc01.aar/74e3b76c3f91c81adfb0839085c78aa0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0-rc01.aar/74e3b76c3f91c81adfb0839085c78aa0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0-rc01.aar/e5305ea3c1c15d43284254a31ac5f874/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0-rc01.aar/e5305ea3c1c15d43284254a31ac5f874/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0-rc01.aar/9096d8ed52976d17436269aaae7ed14c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0-rc01.aar/9096d8ed52976d17436269aaae7ed14c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0-rc01.aar/8a68eb9e8e63682934df4f3dd381355f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0-rc01.aar/8a68eb9e8e63682934df4f3dd381355f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0-rc01.aar/8ffde38875dcbf55c77e47aec685f1ed/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0-rc01.aar/8ffde38875dcbf55c77e47aec685f1ed/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0-rc01.aar/7647bd8521c022cb947c3cd9fa9cca9c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0-rc01] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0-rc01.aar/7647bd8521c022cb947c3cd9fa9cca9c/AndroidManifest.xml:20:5-44
+INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/debug/AndroidManifest.xml
+INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/debug/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/debug/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/debug/AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/debug/AndroidManifest.xml:6:5-66
+	android:name
+		ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/debug/AndroidManifest.xml:6:22-64
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/debug/AndroidManifest.xml:7:5-79
+MERGED from [:location] /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/build/location/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:5-79
+MERGED from [:location] /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/build/location/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:5-79
+	android:name
+		ADDED from /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/android/app/src/debug/AndroidManifest.xml:7:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from [:location] /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/build/location/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from [:location] /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/build/location/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:22-78
+activity#io.flutter.plugins.urllauncher.UrlLauncherPlugin$WebViewActivity
+ADDED from [:url_launcher] /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:9-11:74
+	android:exported
+		ADDED from [:url_launcher] /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:13-37
+	android:theme
+		ADDED from [:url_launcher] /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:11:13-71
+	android:name
+		ADDED from [:url_launcher] /Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:9:13-92
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-15.0.1.aar/a4c4a2d416d465ece38ab7914db4c60a/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-15.0.1.aar/a4c4a2d416d465ece38ab7914db4c60a/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-15.0.1.aar/a4c4a2d416d465ece38ab7914db4c60a/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-15.0.1.aar/a4c4a2d416d465ece38ab7914db4c60a/AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-15.0.1.aar/1f5f33311130cbcfe926169aed53ff7a/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-15.0.1.aar/1f5f33311130cbcfe926169aed53ff7a/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:15.0.1] /Users/angusfiedler/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-15.0.1.aar/1f5f33311130cbcfe926169aed53ff7a/AndroidManifest.xml:24:13-58
