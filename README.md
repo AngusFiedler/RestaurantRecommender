@@ -1,4 +1,4 @@
-# food_recommendation
+# Food Recommendation for ios and android
 
 A Flutter project that recommends nearby restaurant's to the user based on previous visits and the users location. It requires a flask server to be run which is included in the NON-FLUTTER folder. 
 
