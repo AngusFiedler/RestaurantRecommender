@@ -15,7 +15,7 @@ class Post {
     return Post(
       category: json['category'],
       location: json['location'],
-      rating: json['rating'],
+      rating: json['rating'].toDouble(),
       restaurantName: json['name']
     );
   }
