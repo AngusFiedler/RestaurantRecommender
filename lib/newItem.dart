@@ -67,6 +67,8 @@ class _ItemState extends State<NewItemWidget> {
       onPressed: () {
         addData(restaurantNameController.text);
         print(restaurantNameController.text);
+        restaurantNameController.clear();
+        Navigator.pop(context);
       },
       color: Colors.red,
     );

@@ -1,4 +1,4 @@
-#Mon Apr 22 19:29:53 MDT 2019
+#Wed Apr 24 20:18:20 MDT 2019
 base.0=/Users/angusfiedler/Development/Projects/Flutter/Restaurant_Recommender/build/app/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

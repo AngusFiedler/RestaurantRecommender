@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:location/location.dart';
 import 'util/jsonUtil.dart';
 import 'newItem.dart';
-//import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(MyApp());
 
@@ -108,9 +108,11 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Card myCard(AsyncSnapshot<Post> post) {
-    return Card(
-        child: Padding(
+  Widget myCard(AsyncSnapshot<Post> post) {
+    String rName = post.data.restaurantName.replaceAll(" ", "+");
+    String url = "http://maps.google.com/?q=" +  rName;
+    return InkWell(onTap: (){launch(url);},child: Card(
+      child: Padding(
       padding: EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -118,7 +120,20 @@ class _MyHomePageState extends State<MyHomePage> {
           recoTextWidget(post),
         ],
       ),
+    )
     ));
+    /*
+    return Card(child: Padding(
+      padding: EdgeInsets.all(20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          //recoTextWidget(post),
+          InkWell(onTap: (){launch(url);},child: recoTextWidget(post),)
+        ],
+      ),
+    ));
+    */
   }
 
   FloatingActionButton floatingAction() {
@@ -140,9 +155,11 @@ class _MyHomePageState extends State<MyHomePage> {
       children: <Widget>[
         Text(post.data.restaurantName, style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
         Divider(),
+        Text("Category: " + post.data.category.toString()),
         Text("Location: " + post.data.location),
         stars(post.data.rating),
         Text("Rating: " + post.data.rating.toString()),
+        //Text("Category: " + post.data.category.toString()),
       ],
     );
   }

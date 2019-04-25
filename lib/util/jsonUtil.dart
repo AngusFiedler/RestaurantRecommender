@@ -33,8 +33,10 @@ class Post {
 
 class JsonUtil {
   //test url: https://jsonplaceholder.typicode.com/posts/1
-  String recieveURL = "http://127.0.0.1:5000/static/";
-  String sendURL = "http://127.0.0.1:5000/foo";
+  //String recieveURL = "http://127.0.0.1:5000/static/";
+  //String sendURL = "http://127.0.0.1:5000/foo";
+  String recieveURL = "https://angusfiedler.pythonanywhere.com/static/";
+  String sendURL = "https://angusfiedler.pythonanywhere.com/foo";
 
   //retreives data from post
   Future<Post> fetchPost(String id) async {
