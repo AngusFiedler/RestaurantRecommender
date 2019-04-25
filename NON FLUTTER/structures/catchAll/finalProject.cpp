@@ -264,19 +264,19 @@ void Graph::buildJSON(vector<vertex> tempRec){
 
 	//FILE STREAM METHOD
 
-	ofstream writeFile1("./static/1.json");
+	ofstream writeFile1("/home/angusfiedler/deploy/static/1.json");
 	WriteJSON(writeFile1, outs[0]);
 
-	ofstream writeFile2("./static/2.json");
+	ofstream writeFile2("/home/angusfiedler/deploy/static/2.json");
 	WriteJSON(writeFile2, outs[1]);
 
-	ofstream writeFile3("./static/3.json");
+	ofstream writeFile3("/home/angusfiedler/deploy/static/3.json");
 	WriteJSON(writeFile3, outs[2]);
 
-	ofstream writeFile4("./static/4.json");
+	ofstream writeFile4("/home/angusfiedler/deploy/static/4.json");
 	WriteJSON(writeFile4, outs[3]);
 
-	ofstream writeFile5("./static/5.json");
+	ofstream writeFile5("/home/angusfiedler/deploy/static/5.json");
 	WriteJSON(writeFile5, outs[4]);
 
 
@@ -295,7 +295,7 @@ void Graph::buildJSON(vector<vertex> tempRec){
 void Graph::saveData(){
 	ofstream outStream;
 
-	outStream.open("./static/savedRestaurants.csv");
+	outStream.open("/home/angusfiedler/deploy/static/savedRestaurants.csv");
 
 	for(int i = 0; i < savedRestaurants.size(); i++){
 		outStream << savedRestaurants[i]->name << "," << savedRestaurants[i]->count << endl;
@@ -306,7 +306,7 @@ void Graph::saveData(){
 
 void Graph::loadData(){
 	ifstream inStream;
-	inStream.open("./static/savedRestaurants.csv");
+	inStream.open("/home/angusfiedler/deploy/static/savedRestaurants.csv");
 
 	string name;
 	string count;

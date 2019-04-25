@@ -147,7 +147,7 @@ bool catchAll(string saveName){
 	Graph g0;
 	ifstream inStream;
 
-	vector<string> files = {"./RestCSV/American.csv", "./RestCSV/Chinese.csv", "./RestCSV/Indian.csv", "./RestCSV/Italian.csv", "./RestCSV/Mexican.csv", "./RestCSV/Pizza.csv", "./RestCSV/Sandwiches.csv"};
+	vector<string> files = {"/home/angusfiedler/deploy/RestCSV/American.csv", "/home/angusfiedler/deploy/RestCSV/Chinese.csv", "/home/angusfiedler/deploy/RestCSV/Indian.csv", "/home/angusfiedler/deploy/RestCSV/Italian.csv", "/home/angusfiedler/deploy/RestCSV/Mexican.csv", "/home/angusfiedler/deploy/RestCSV/Pizza.csv", "/home/angusfiedler/deploy/RestCSV/Sandwiches.csv"};
 
 	for(int i = 0; i < files.size(); i++){
 		inStream.open(files[i]);
@@ -170,7 +170,7 @@ bool catchAll(string saveName){
 				getline(ss, location, '"');
 	
 				category = files[i];
-				//category.erase (category.begin(), category.begin()+2);
+				category.erase (category.begin(), category.begin()+34);
 				category.erase(category.end()-4, category.end());
 				getline(ss, distance);
 
@@ -228,4 +228,4 @@ bool catchAll(string saveName){
 	// g0.addEdge("Five Guys", "Wendys");
 
 	// g0.recommend("McDonalds");
-	// g0.recommend("Chipotle");
+// g0.recommend("Chipotle");
