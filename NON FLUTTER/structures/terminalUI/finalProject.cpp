@@ -16,12 +16,14 @@ Graph::~Graph(){
 }
 
 
-void Graph::addVertex(string restaurantName, string category, string location, float rating, float distance){
+void Graph::addVertex(string restaurantName, string category, string location, double rating, double lat, double lng, float distance){
 	vertex v1;
 	v1.name = restaurantName;
 	v1.category = category;
 	v1.location = location;
 	v1.distance = distance;
+	v1.lat = lat;
+	v1.lng = lng;
 	v1.rating = rating;
 	v1.saved = false;
 	v1.count = 0;
@@ -103,6 +105,22 @@ vertex* Graph::findVertex(string name){
 	vertex *found = nullptr;
 	for(int i = 0; i < vertices.size(); i++){
 		if(vertices[i].name == name){
+			if(!found){
+				found = &vertices[i];
+			}else if(found->distance > vertices[i].distance){
+				found = &vertices[i];
+			}
+		}
+	}
+
+	return found;
+}
+
+
+vertex* Graph::findVertex(string name, string location){
+	vertex *found = nullptr;
+	for(int i = 0; i < vertices.size(); i++){
+		if(vertices[i].name == name && vertices[i].location == location){
 			found = &vertices[i];
 			break;
 		}
@@ -183,17 +201,99 @@ void Graph::recommend(){
 	// IF USING CATCHALL METHOD, BUILD JSON. IF TERMINAL METHOD, COUT RECOMMENDATIONS
 
 	//buildJSON(tempRec);
+
 	string numRec;
 	cout << "How many recommendations do you want to see?" << endl;
 	getline(cin, numRec);
 
 	if(recommendations.size() >= stoi(numRec)){
-		cout << "Top " << numRec << " related restaurants: " << endl;
+		cout << "Top " << numRec << " recommendations: " << endl;
 		for(int i = 0; i < stoi(numRec); i++){
 			displayVertex(&tempRec[i]);
 			}
 	}else{
-		cout << "Top " << recommendations.size() << " related restaurants:" << endl;
+		cout << "Top " << recommendations.size() << " recommendations:" << endl;
+		for(int i = 0; i < recommendations.size(); i++){
+			displayVertex(&tempRec[i]);
+		}
+	}
+
+}
+
+void Graph::recommend(string category){
+
+	vector<vertex*> recommendations;
+
+	if(savedRestaurants.size() == 0){
+		return;
+	}
+
+	bool catCheck = false;
+	for(int i = 0; i < savedRestaurants.size(); i++){
+		if(savedRestaurants[i]->category == category){
+			catCheck == true;
+		}
+	}
+
+	if(catCheck){
+		for(int i = 0; i < savedRestaurants.size(); i++){
+			
+			for(int j = 0; j < savedRestaurants[i]->Edges.size(); j++){
+				if(!inRecommendations(savedRestaurants[i]->Edges[j].v, recommendations) && !savedRestaurants[i]->Edges[j].v->saved && savedRestaurants[i]->Edges[j].v->category == category){
+					recommendations.push_back(savedRestaurants[i]->Edges[j].v);
+
+				}else{
+					savedRestaurants[i]->Edges[j].v->count++;
+				}
+			}
+		}
+	}else{
+		for(int i = 0; i < vertices.size(); i++){
+			if(vertices[i].category == category){
+				recommendations.push_back(&vertices[i]);
+			}
+		}
+	}
+
+
+	setWeights(recommendations);
+
+	//after weights are set, reset counts so they reflect the # of times 
+	//restaurant has been saved
+
+	for(int i = 0; i < savedRestaurants.size(); i++){
+		
+		for(int j = 0; j < savedRestaurants[i]->Edges.size(); j++){
+			if(savedRestaurants[i]->Edges[j].v->saved){
+				savedRestaurants[i]->Edges[j].v->count--;
+			}
+		}
+	}
+
+
+	vector<vertex> tempRec;
+
+	for(int i = 0; i < recommendations.size(); i++){
+		tempRec.push_back(*recommendations[i]);
+	}
+
+	sort(tempRec.begin(), tempRec.end());
+
+	// IF USING CATCHALL METHOD, BUILD JSON. IF TERMINAL METHOD, COUT RECOMMENDATIONS
+
+	//buildJSON(tempRec);
+
+	string numRec;
+	cout << "How many recommendations do you want to see?" << endl;
+	getline(cin, numRec);
+
+	if(recommendations.size() >= stoi(numRec)){
+		cout << "Top " << numRec << " recommendations: " << endl;
+		for(int i = 0; i < stoi(numRec); i++){
+			displayVertex(&tempRec[i]);
+			}
+	}else{
+		cout << "Top " << recommendations.size() << " recommendations:" << endl;
 		for(int i = 0; i < recommendations.size(); i++){
 			displayVertex(&tempRec[i]);
 		}
@@ -215,6 +315,30 @@ void Graph::saveRestaurant(string restaurantName){
 		savedRestaurants.push_back(v);
 		v->saved = true;
 		v->count++;
+	}
+}
+
+void Graph::removeSaved(string restaurantName){
+	bool found = false;
+	string choice;
+
+	for(int i = 0; i < savedRestaurants.size(); i++){
+		if(savedRestaurants[i]->name == restaurantName){
+			found == true;
+			cout << "Are you sure you want to remove " <<
+			savedRestaurants[i]->name << "? Y/n" << endl;
+			getline(cin, choice);
+			if(choice == "Y"){
+				vertex *target = findVertex(restaurantName);
+				target->saved = false;
+				target->count = 0;
+				savedRestaurants.erase(savedRestaurants.begin() + i);
+				cout << "Restaurant removed" << endl;
+			}else{
+				cout << "No changes made" << endl;
+			}
+			break;
+		}
 	}
 }
 
@@ -263,18 +387,23 @@ void Graph::buildJSON(vector<vertex> tempRec){
 
 	//FILE STREAM METHOD
 
+	//ofstream writeFile1("/home/angusfiedler/deploy/static/1.json");
 	ofstream writeFile1("1.json");
 	WriteJSON(writeFile1, outs[0]);
 
+	// ofstream writeFile2("/home/angusfiedler/deploy/static/2.json");
 	ofstream writeFile2("2.json");
 	WriteJSON(writeFile2, outs[1]);
 
+	// ofstream writeFile3("/home/angusfiedler/deploy/static/3.json");
 	ofstream writeFile3("3.json");
 	WriteJSON(writeFile3, outs[2]);
 
+	//ofstream writeFile4("/home/angusfiedler/deploy/static/4.json");
 	ofstream writeFile4("4.json");
 	WriteJSON(writeFile4, outs[3]);
 
+	//ofstream writeFile5("/home/angusfiedler/deploy/static/5.json");
 	ofstream writeFile5("5.json");
 	WriteJSON(writeFile5, outs[4]);
 
@@ -292,19 +421,27 @@ void Graph::buildJSON(vector<vertex> tempRec){
 
 
 void Graph::saveData(){
+
 	ofstream outStream;
 
+	// outStream.open("/home/angusfiedler/deploy/static/savedRestaurants.csv");
 	outStream.open("savedRestaurants.csv");
-
 	for(int i = 0; i < savedRestaurants.size(); i++){
 		outStream << savedRestaurants[i]->name << "," << savedRestaurants[i]->count << endl;
 	}
 
 	outStream.close();
+
+	outStream.open("allRestaurants.csv");
+
+	for(int i = 0; i < vertices.size(); i++){
+		outStream << vertices[i].name << '"' << vertices[i].category << '"' << vertices[i].rating << '"' << vertices[i].location << '"' << vertices[i].lat << '"' << vertices[i].lng << endl;
+	}
 }
 
 void Graph::loadData(){
 	ifstream inStream;
+	//inStream.open("/home/angusfiedler/deploy/static/savedRestaurants.csv");
 	inStream.open("savedRestaurants.csv");
 
 	string name;

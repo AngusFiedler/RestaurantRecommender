@@ -22,7 +22,9 @@ public:
     std::string category;
     std::string location;
     float distance;
-    float rating;
+    double lat;
+    double lng;
+    double rating;
     bool saved;
     int count;
     float weight;
@@ -68,13 +70,16 @@ class Graph
   public:
     Graph();
     ~Graph();
-    void addVertex(std::string restaurantName, std::string category, std::string location, float rating, float distance);
+    void addVertex(std::string restaurantName, std::string category, std::string location, double rating, double lat, double lng, float distance);
     void addEdge(std::string restaurant1, std::string restaurant2);
     vertex *findVertex(std::string name);
+    vertex *findVertex(std::string name, std::string location);
     void displayEdges();
     void recommend();
+    void recommend(string category);
     void buildEdges();
     void saveRestaurant(string restaurantName);
+    void removeSaved(string restaurantName);
     void displayAllVertices();
     void displaySaved();
     void buildJSON(vector<vertex> tempRec);
